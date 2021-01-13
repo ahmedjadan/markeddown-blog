@@ -1,0 +1,48 @@
+<%- include('./_head.ejs') %>
+<div class="bg-gray-100 min-h-full">
+  
+<div class="mx-auto w-7/12">
+
+  <nav class="flex p-3 h-28 mx-auto items-center ">
+    <div class=" text-gray-700 text-3xl ">
+      <a href="/" class="text-4xl font-extrabold ">Mardown Blog</a>
+    </div>
+    <ul class="flex mx-7">
+      <li class=" mx-6 mt-3 uppercase text-gray-700 text-2Xl font-bold"><a href="/">Home</a></li>
+    </ul>
+    
+  </nav>
+  <hr class="bg-indigo-200 w-full h-0.5 ">
+</div>
+
+<div class="space-6 px-4 md:w-6/12 mx-auto">
+  <div class="p-7 bg-gray-50 mt-3 rounded">
+    <h1 class="text-3Xl font-bold text-gray-800 capitalize">
+      <%= article.title %>
+    </h1>
+    <p class="text-gray-600 my-3">
+      <%= article.createdAt.toLocaleDateString() %>
+    </p>
+    <div class="md:w-6 flex ">
+      <div class="bg-indigo-500 transition cursor-pointer hover:bg-indigo-700 m-2 pt-2.5 px-6 rounded text-gray-100 place-items-center">
+        <a href="/articles/edit/<%= article.id %>" class="">Edit</a>
+    </div>
+    <div class="bg-red-500 hover:bg-red-700 transition cursor-pointer m-2 pt-2.5 px-6 rounded text-gray-100">
+      <form
+      action="/articles/<%= article.id  %>?_method=DELETE "
+      method="POST"
+      class= >
+      <button type="submit" class="outlin-none border-0 outline-none focus:outline-none" >Delete</button>
+    </form>
+    </div>
+      
+    </div>
+    <div
+      class="text-gray-800 my-2 leading-relaxed text-justify p-2 text-xl markdown"
+    >
+      <%- article.sanitizedHtml %>
+    </div>
+  </div>
+</div>
+
+</div>

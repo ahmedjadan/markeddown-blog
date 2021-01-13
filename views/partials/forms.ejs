@@ -1,0 +1,52 @@
+
+<div class="">
+  <label for="title" class="text-lg">Title</label>
+  <input
+    type="text"
+    required 
+    value="<%= article.title  %> " name="title" id="title"
+    placeholder="blog title"
+    class="appearance-none block w-full bg-gray-50 text-gray-700 border border-indigo-100 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-indigo-500"
+  />
+  <div class="mt-4">
+    <label for="description" class="text-lg">Brifr About Blog</label>
+    <textarea
+      name="description"
+      rows="7"
+      id="description"
+      placeholder="brife about the blog"
+      class="appearance-none block w-full bg-gray-50 text-gray-700 border border-indigo-100 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-indigo-500"
+    >
+    <%= article.description %> 
+  </textarea>
+  </div>
+  <div class="mt-4">
+    <label for="markdown" class="text-lg">Blog Body</label>
+    <textarea
+    required
+      name="markdown"
+      id="markdown"
+      placeholder="blog content"
+      rows="17"
+      class="appearance-none block w-full bg-gray-50 text-gray-700 border border-indigo-100 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-indigo-500"
+    >
+  <%= article.markdown %> 
+  </textarea>
+  </div>
+<!-- <div class="m4">
+  <label for="img">Upload Image</label>
+  <input type="file" name="img" id="img">
+</div> -->
+  <button
+    type="submit"
+    class="block bg-indigo-500 w-full mt-3 p-3 text-center rounded hover:bg-indigo-600 text-gray-100"
+  >
+    Create
+  </button>
+
+  <a
+    href="/"
+    class="block text-center bg-gray-500 w-full mt-3 p-3 rounded hover:bg-gray-600 text-gray-100"
+    >Cancel</a
+  >
+</div>
